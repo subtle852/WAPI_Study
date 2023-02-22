@@ -13,6 +13,7 @@
 #include "Client.h"
 #include "yaApplication.h"
 #include "yaSceneManager.h"
+#include "yaResources.h"
 
 #define MAX_LOADSTRING 100
 
@@ -88,7 +89,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로그램 핸들(id)
     }
 
     ya::SceneManager::Release();// application이 사라지기 전에 mScenes들을 사라지게 하는 Release함수를 호출하게 한 것
-
+    ya::Resources::Release();
     return (int) msg.wParam;
 }
 
