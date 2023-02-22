@@ -44,6 +44,9 @@
     <Filter Include="Engine\Input">
       <UniqueIdentifier>{e34cdf86-c12d-487c-9e5a-493d900fc4a3}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Engine\Resource">
+      <UniqueIdentifier>{441b7a3c-8220-4e67-bfbf-03f136410316}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Client.h">
@@ -103,6 +106,13 @@
     <ClInclude Include="yaInput.h">
       <Filter>Engine\Input</Filter>
     </ClInclude>
+    <ClInclude Include="yaResource.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="yaResources.h">
+      <Filter>Engine\Resource</Filter>
+    </ClInclude>
+    <ClInclude Include="yaImage.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -157,5 +167,12 @@
     <ClCompile Include="yaInput.cpp">
       <Filter>Engine\Input</Filter>
     </ClCompile>
+    <ClCompile Include="yaResource.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="yaResources.cpp">
+      <Filter>Engine\Resource</Filter>
+    </ClCompile>
+    <ClCompile Include="yaImage.cpp" />
   </ItemGroup>
 </Project>

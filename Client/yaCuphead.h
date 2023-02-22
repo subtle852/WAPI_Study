@@ -1,5 +1,6 @@
 #pragma once
 #include "yaGameObject.h"
+#include "yaImage.h"
 
 namespace ya
 {
@@ -15,6 +16,7 @@ namespace ya
 		virtual void Release();
 
 	private:
+		Image* mImage;
 	};
 }
 

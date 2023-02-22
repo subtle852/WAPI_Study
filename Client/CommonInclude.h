@@ -14,6 +14,7 @@
 #include <vector>
 #include <list>
 #include <map>
+#include <assert.h>
 
 // 단축키
 // 문장 단위로 넘길때 ctrl누르고 좌우 
