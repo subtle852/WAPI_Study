@@ -5,7 +5,7 @@ namespace ya
 {
 	std::vector<Scene*> SceneManager::mScenes = {}; // static 변수 초기화
 
-	void ya::SceneManager::Initialize()
+	void SceneManager::Initialize()
 	{
 		mScenes.resize((UINT)eSceneType::Max);
 
@@ -19,7 +19,7 @@ namespace ya
 		}
 	}
 
-	void ya::SceneManager::Update()
+	void SceneManager::Update()
 	{
 		for (Scene* scene : mScenes)
 		{
@@ -28,7 +28,7 @@ namespace ya
 		}
 	}
 
-	void ya::SceneManager::Render(HDC hdc)
+	void SceneManager::Render(HDC hdc)
 	{
 		for (Scene* scene : mScenes)
 		{
@@ -37,12 +37,14 @@ namespace ya
 		}
 	}
 
-	void ya::SceneManager::Release()
+	void SceneManager::Release()
 	{
 		for (Scene* scene : mScenes)
 		{
-			if (scene == nullptr) continue;
-			scene->Release();
+			if (scene == nullptr) continue;// nullptr인 경우도 있으니 예외처리
+
+			delete scene;
+			scene = nullptr;
 		}
 	}
 }

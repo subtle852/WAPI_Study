@@ -12,6 +12,7 @@
 #include "framework.h"
 #include "Client.h"
 #include "yaApplication.h"
+#include "yaSceneManager.h"
 
 #define MAX_LOADSTRING 100
 
@@ -36,6 +37,9 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로그램 핸들(id)
 {
     UNREFERENCED_PARAMETER(hPrevInstance);
     UNREFERENCED_PARAMETER(lpCmdLine);
+
+    _CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
+    //_CrtSetBreakAlloc)(217); 메모리 릭 잡는 방법
 
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
@@ -82,6 +86,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance, // 프로그램 핸들(id)
     {
 
     }
+
+    ya::SceneManager::Release();// application이 사라지기 전에 mScenes들을 사라지게 하는 Release함수를 호출하게 한 것
 
     return (int) msg.wParam;
 }
