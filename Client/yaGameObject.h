@@ -15,10 +15,29 @@ namespace ya
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		void SetPos(Vector2 pos) { mPos = pos; }
+		template <typename T>
+		T* AddComponent()
+		{
+			T* comp = new T();
+			UINT compType = (UINT)comp->GetType();
+			mComponents[compType] = comp;
 
-	protected:
-		Vector2 mPos;
+			return comp;
+		}
+
+		template <typename T>
+		T* GetComponent()
+		{
+			for (Component* comp : mComponents)
+			{
+				if (dynamic_cast<T*>(comp))// 바뀔 수 있는 애들만 바꿔지고 조건이 참으로 반환
+				{
+					return dynamic_cast<T*>(comp);
+				}// RTTI 방식(실행시간에 타입정보를 식별)
+
+				return nullptr;
+			}
+		}
 
 	private:
 	    // HDC mHdc;

@@ -17,6 +17,9 @@ namespace ya
 
 		void AddGameObject(GameObject* obj, eLayerType layer);
 
+		virtual void OnEnter();
+		virtual void OnExit();
+
 	private:
 		std::vector<Layer> mLayers;
 	};

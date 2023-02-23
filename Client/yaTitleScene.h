@@ -3,12 +3,11 @@
 
 namespace ya
 {
-	class Cuphead;
-	class PlayScene : public Scene
+	class TitleScene : public Scene
 	{
 	public:
-		PlayScene();
-		~PlayScene();
+		TitleScene();
+		~TitleScene();
 
 		virtual void Initialize() override;
 		virtual void Update() override;
@@ -17,9 +16,6 @@ namespace ya
 
 		virtual void OnEnter() override;
 		virtual void OnExit() override;
-
 	private:
-		Cuphead* mCuphead;
 	};
 }
-

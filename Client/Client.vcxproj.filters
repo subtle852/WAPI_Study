@@ -113,6 +113,12 @@
       <Filter>Engine\Resource</Filter>
     </ClInclude>
     <ClInclude Include="yaImage.h" />
+    <ClInclude Include="yaTitleScene.h">
+      <Filter>Contents\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="yaTransform.h">
+      <Filter>Engine\Component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Client.rc">
@@ -174,5 +180,11 @@
       <Filter>Engine\Resource</Filter>
     </ClCompile>
     <ClCompile Include="yaImage.cpp" />
+    <ClCompile Include="yaTitleScene.cpp">
+      <Filter>Contents\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="yaTransform.cpp">
+      <Filter>Engine\Component</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

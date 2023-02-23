@@ -13,8 +13,12 @@ namespace ya
 		static void Render(HDC hdc);
 		static void Release();
 
+		static void LoadScene(eSceneType type);
+
 	private:
 		static std::vector<Scene*> mScenes;
+		static Scene* mActiveScene;
+
 		// static으로 해줘야 static 함수 안에서 사용이 가능하고
 		// 멤버 함수에 static을 붙인 이유는 전역변수처럼 어디서든 접근가능하게 하기위함이고
 		// 실제로 클래스가 만들어진 객체가 없는 것(메모리 할당하지 않았음)이 특징이다
