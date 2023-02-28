@@ -3,7 +3,7 @@
 
 namespace ya
 {
-
+	
 	class Resources
 	{
 	public:
@@ -50,9 +50,15 @@ namespace ya
 			return dynamic_cast<T*>(resource);
 		}
 
+		template <typename T>
+		static void Insert(const std::wstring& key, T* resource)
+		{
+			mResources.insert(std::make_pair(key, resource));
+		}
+
 		static void Release()
 		{
-			for (/*std::pair<std::wstring, Resource*>*/auto pair : mResources)
+			for (auto pair: mResources)
 			{
 				delete pair.second;
 				pair.second = nullptr;
@@ -63,3 +69,4 @@ namespace ya
 		static std::map<std::wstring, Resource*> mResources;
 	};
 }
+

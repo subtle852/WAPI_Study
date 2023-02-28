@@ -2,38 +2,35 @@
 #include "yaInput.h"
 #include "yaSceneManager.h"
 
-ya::TitleScene::TitleScene()
+namespace ya
 {
-}
-
-ya::TitleScene::~TitleScene()
-{
-}
-
-void ya::TitleScene::Initialize()
-{
-}
-
-void ya::TitleScene::Update()
-{
-	if (Input::GetKeyState(eKeyCode::N) == eKeyState::Down)
+	TitleScene::TitleScene()
 	{
-		SceneManager::LoadScene(eSceneType::Play);
 	}
-}
+	TitleScene::~TitleScene()
+	{
+	}
+	void TitleScene::Initialize()
+	{
+	}
+	void TitleScene::Update()
+	{
+		if (Input::GetKeyState(eKeyCode::N) == eKeyState::Down)
+		{
+			SceneManager::LoadScene(eSceneType::Play);
+		}
 
-void ya::TitleScene::Render(HDC hdc)
-{
-}
-
-void ya::TitleScene::Release()
-{
-}
-
-void ya::TitleScene::OnEnter()
-{
-}
-
-void ya::TitleScene::OnExit()
-{
+	}
+	void TitleScene::Render(HDC hdc)
+	{
+	}
+	void TitleScene::Release()
+	{
+	}
+	void TitleScene::OnEnter()
+	{
+	}
+	void TitleScene::OnExit()
+	{
+	}
 }

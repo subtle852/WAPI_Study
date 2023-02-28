@@ -3,15 +3,10 @@
 
 namespace ya
 {
-
-
-
-
 	GameObject::GameObject()
 	{
 		mComponents.resize((UINT)eComponentType::End);
-
-		AddComponent<Transform>();// 게임 오브젝트 만들면 Transform 항상 붙어있게 구성
+		AddComponent<Transform>();
 	}
 
 	GameObject::~GameObject()
@@ -27,7 +22,9 @@ namespace ya
 	{
 		for (Component* comp : mComponents)
 		{
-			if (comp == nullptr) continue;
+			if (comp == nullptr)
+				continue;
+
 			comp->Initialize();
 		}
 	}
@@ -36,7 +33,9 @@ namespace ya
 	{
 		for (Component* comp : mComponents)
 		{
-			if (comp == nullptr) continue;
+			if (comp == nullptr)
+				continue;
+
 			comp->Update();
 		}
 	}
@@ -45,7 +44,9 @@ namespace ya
 	{
 		for (Component* comp : mComponents)
 		{
-			if (comp == nullptr) continue;
+			if (comp == nullptr)
+				continue;
+
 			comp->Render(hdc);
 		}
 	}
@@ -54,5 +55,4 @@ namespace ya
 	{
 
 	}
-
 }

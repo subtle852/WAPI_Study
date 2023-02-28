@@ -1,18 +1,20 @@
 #pragma once
 
+
 enum class eSceneType
 {
 	Title,
 	Play,
 	Ending,
-	Max,
+	End,
 };
 
-enum class eLayerType // layer 그리는 순서
+enum class eLayerType
 {
 	BG,
 	Monster,
 	Player,
+	Test,
 	Effect,
 	UI,
 	End,
@@ -23,7 +25,7 @@ enum class eComponentType
 	Transform,
 	Collider,
 	SpriteRenderer,
-	Animatior,
+	Animator,
 	Audio,
 	End,
 };

@@ -9,7 +9,7 @@ namespace ya
 	public:
 		GameObject();
 		virtual ~GameObject();
-		
+
 		virtual void Initialize();
 		virtual void Update();
 		virtual void Render(HDC hdc);
@@ -21,6 +21,7 @@ namespace ya
 			T* comp = new T();
 			UINT compType = (UINT)comp->GetType();
 			mComponents[compType] = comp;
+			comp->SetOwner(this);
 
 			return comp;
 		}
@@ -30,26 +31,14 @@ namespace ya
 		{
 			for (Component* comp : mComponents)
 			{
-				if (dynamic_cast<T*>(comp))// 바뀔 수 있는 애들만 바꿔지고 조건이 참으로 반환
-				{
+				if (dynamic_cast<T*>(comp))
 					return dynamic_cast<T*>(comp);
-				}// RTTI 방식(실행시간에 타입정보를 식별)
-
-				return nullptr;
 			}
+
+			return nullptr;
 		}
-
+		
 	private:
-	    // HDC mHdc;
-		// 상속방식의 단점은
-		// 많은걸 상속할수록 
-		// 실수를 할 여지가 많아지고
-		// 코드가 복잡해진다
-		//Animation ani
-		//Skill skill;
-		//Stat stat;
-
-		// 컴포넌트 방식
 		std::vector<Component*> mComponents;
 	};
 }

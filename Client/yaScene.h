@@ -6,7 +6,7 @@ namespace ya
 {
 	class Scene : public Entity
 	{
-	public: // Scene을 상속받는 TitleScene... 과 같은 클래스 생성
+	public:
 		Scene();
 		virtual ~Scene();
 		
@@ -15,10 +15,12 @@ namespace ya
 		virtual void Render(HDC hdc);
 		virtual void Release();
 
-		void AddGameObject(GameObject* obj, eLayerType layer);
-
 		virtual void OnEnter();
 		virtual void OnExit();
+
+		void AddGameObeject(GameObject* obj, eLayerType layer);
+
+		
 
 	private:
 		std::vector<Layer> mLayers;

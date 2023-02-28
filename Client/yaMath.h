@@ -3,6 +3,12 @@
 
 struct Vector2
 {
+	static Vector2 Up;
+	static Vector2 Right;
+
+	static Vector2 One;
+	static Vector2 Zero;
+
 	float x;
 	float y;
 
@@ -12,13 +18,13 @@ struct Vector2
 	{
 
 	}
-	Vector2(int x, int y)
+	Vector2(float x, float y)
 		: x(x)
 		, y(y)
 	{
 
 	}
-	Vector2(float x, float y)
+	Vector2(int x, int y)
 		: x(x)
 		, y(y)
 	{
@@ -30,3 +36,4 @@ struct Vector2
 	Vector2(Vector2&&) = default;
 	Vector2& operator=(Vector2&&) = default;
 };
+

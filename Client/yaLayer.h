@@ -21,4 +21,3 @@ namespace ya
 		std::vector<GameObject*> mGameObjects;
 	};
 }
-
